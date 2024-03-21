@@ -34,6 +34,9 @@ public class Lesson01Quiz02Controller {
 	//http://localhost:8080/lesson01/quiz02/2
 	@RequestMapping("/2")
 	public List<ContentData> quiz02_2() {
+		//@ResponseBody + return String => HttpMessageConverter 동작 => HTML로 만듦.
+		//@ResponseBody + return 객체(Map, Class, List)  => HttpMessageConverter 동작 => JSON
+		
 		List<ContentData> list = new ArrayList<>();
 		ContentData d1 = new ContentData();
 		d1.setTitle("안녕하세요, 가입인사 드립니다");
