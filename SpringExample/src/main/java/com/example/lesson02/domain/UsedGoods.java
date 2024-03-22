@@ -1,4 +1,4 @@
-package com.example.lesson02;
+package com.example.lesson02.domain;
 
 import java.util.Date;
 
@@ -13,7 +13,7 @@ public class UsedGoods {
 	private int price;
 	private String picture;
 	private Date createdAt;
-	private Date updateAt;
+	private Date updatedAt;
 	
 	
 	public int getId() {
@@ -59,10 +59,10 @@ public class UsedGoods {
 		this.createdAt = createdAt;
 	}
 	public Date getUpdateAt() {
-		return updateAt;
+		return updatedAt;
 	}
 	public void setUpdateAt(Date updateAt) {
-		this.updateAt = updateAt;
+		this.updatedAt = updateAt;
 	}
 	
 	
