@@ -13,4 +13,7 @@ public interface ReviewMapper {
 	
 	public int insertReviewAsField(@Param("storeId") int storeId, @Param("menu") String menu, @Param("userName") String userName, @Param("point") Double point, @Param("review") String review);
 	
+	public int updateReviewById(
+			@Param ("id") int id,
+			@Param ("review") String review);
 }
