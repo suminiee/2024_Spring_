@@ -29,7 +29,7 @@
 			</div>
 			<div class="form-group">
 				<label for="introduce">자기소개</label>
-				<input type="text" id="introduce" name="introduce" class="form-control">
+				<input type="textarea id="introduce" name="introduce" class="form-control">
 			</div>
 			
 			<input type="submit" value="회원가입" class="btn btn-success">
