@@ -12,10 +12,22 @@
 <body>
 	<div class="container">
 		<h1>공인중개사 추가</h1>
-		<form method="post" <%-- action="/lesson04/quiz02/add-realtor --%>>
+		<form method="post" action="/lesson04/quiz02/add-realtor">
 			<div class="form-group">
-				<label for="nickname">닉네임</label>
-				<input type="text" id="nickname" name="nickname" class="form-control col-3">
+				<label for="office">상호명</label>
+				<input type="text" id="office" name="office" class="form-control col-3">
+			</div>
+			<div class="form-group">
+				<label for="phoneNumber">전화번호</label>
+				<input type="text" id="phoneNumber" name="phoneNumber" class="form-control col-3">
+			</div>
+			<div class="form-group">
+				<label for="address">주소</label>
+				<input type="text" id="address" name="address" class="form-control col-3">
+			</div>
+			<div class="form-group">
+				<label for="grade">등급</label>
+				<input type="text" id="grade" name="grade" class="form-control col-3">
 			</div>
 			
 			<input type="submit" value="추가" class="btn btn-info">
