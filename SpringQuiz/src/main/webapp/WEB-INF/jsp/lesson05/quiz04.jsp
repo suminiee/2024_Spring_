@@ -44,9 +44,24 @@
 					</td>
 					<c:set var="nation" value="${mem.nationality}" />
 					<td>${fn:replace(nation, '삼국시대', '삼국 - ')}</td>
-					
-					
-				</tr>
+					<c:set var="email" value="${mem.email}" />
+					<td>
+						<strong>${fn:split(email, '@')[0]}</strong><c:out value="@" /><c:out value="${fn:split(email, '@')[1]}" />
+					</td>
+					<c:set var="intro" value="${mem.introduce}" />
+					<td>
+						<c:choose>
+							<c:when test="${fn:length(intro) > 15}">
+								${fn:substring(intro, 0, 15)}...
+							</c:when>
+							<c:otherwise>
+								${mem.introduce}
+							</c:otherwise>
+						</c:choose>
+					</td>
+			
+
+					</tr>
 				</c:forEach>
 			</tbody>
 		</table>
