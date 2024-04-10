@@ -100,9 +100,22 @@
 				$.ajax({
 					// request
 					type:"POST"
+					, url:"/lesson06/ex01/add-user"
+					, data:{"name":name, "yyyymmdd":yyyymmdd, "email":email, "introduce":introduce}
 					
 					// response
-					
+					// callback 함수
+					, success:function(data) { // data 파라미터: 응답값(String)
+						if (data == "성공") {
+							// 회원가입 완료 화면으로 이동
+							location.href = "/lesson06/ex01/after-add-user-view"; // GET 요청
+						}
+					}
+					, error:function(xhr, status, error) {
+						alert(xhr);
+						alert(status);
+						alert(error);
+					}
 				});
 				
 				
