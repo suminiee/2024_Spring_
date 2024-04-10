@@ -1,4 +1,4 @@
-package com.example.lesson04.domain;
+package com.quiz.booking.domain;
 
 import java.util.Date;
 
@@ -9,12 +9,14 @@ import lombok.Setter;
 @Data
 @Getter
 @Setter
-public class User {
+public class Booking {
 	private int id;
 	private String name;
-	private String yyyymmdd;
-	private String email;
-	private String introduce;
+	private int headcount;
+	private int day;
+	private Date date;
+	private String phoneNumber;
+	private String state;
 	private Date createdAt;
 	private Date updatedAt;
 	
