@@ -1,5 +1,7 @@
 package com.quiz.lesson07.service;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,5 +24,27 @@ public class CompanyService {
 				.build();
 		
 		return companyRepository.save(company);
+	}
+	
+	public CompanyEntity updateCompany(int id, String scale, int headcount) {
+		
+		CompanyEntity company = companyRepository.findById(id).orElse(null);
+		
+		if (company != null) {
+			company = company.toBuilder()
+				.scale(scale)
+				.headcount(headcount)
+				.build();
+			
+			company = companyRepository.save(company);
 		}
+		
+		return company;
+	}
+	
+	public void deleteCompanyById(int id) {
+		Optional<CompanyEntity> companyOptional = companyRepository.findById(id);
+		companyOptional.ifPresent(c -> companyRepository.delete(c));
+	}
+	
 }

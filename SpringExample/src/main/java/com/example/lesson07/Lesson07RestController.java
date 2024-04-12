@@ -26,4 +26,19 @@ public class Lesson07RestController {
 		//save 된 객체를 리턴하므로 id값이 채워져 있다.
 		return studentBO.addStudent(name, phoneNumber, email, dreamJob);
 	}
+	
+	//u : update
+	@GetMapping("/ex01/update")
+	public StudentEntity update() {
+		//id가 5번인 dreamJob 변경
+		return studentBO.updateStudentDreamJobById(5, "유격수");
+	}
+	
+	//d : delete
+	@GetMapping("/ex01/delete")
+	public String delete() {
+//		id : 3 삭제 
+		studentBO.deleteStudentById(3);
+		return "삭제완료";
+	}
 }

@@ -1,5 +1,6 @@
-package com.example.lesson07.entity;
+package com.quiz.lesson07.entity;
 
+import java.time.LocalDate;
 import java.time.ZonedDateTime;
 
 import org.hibernate.annotations.UpdateTimestamp;
@@ -16,30 +17,42 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-
 @ToString
-@Builder(toBuilder = true) //toBuilder = true : 필더 수정 허용 
+@Builder(toBuilder = true)
 @NoArgsConstructor //파라미터 없는 생성자 
 @Getter
 @AllArgsConstructor
 @Entity
-@Table(name = "new_student")
-public class StudentEntity {
+@Table(name = "recruit")
+public class RecruitEntity {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	@Column(name = "name")
-	private String name;
+	@Column(name ="companyId")
+	private int companyId;
 	
-	@Column(name = "phoneNumber")
-	private String phoneNumber;
+	@Column(name ="position")
+	private String position;
 	
-	@Column(name = "email")
-	private String email;
+	@Column(name ="responsibilities")
+	private String responsibilities;
 	
-	@Column(name = "dreamJob")
-	private String dreamJob;
+	@Column(name ="qualification")
+	private String qualification;
+	
+	@Column(name ="type")
+	private String type;
+	
+	@Column(name ="region")
+	private String region;
+	
+	@Column(name ="salary")
+	private int salary;
+	
+	@Column(name ="deadline")
+	private LocalDate deadline;
 	
 	@UpdateTimestamp //시간 값을 넣지 않아도 현재 시간으로 자동으로 넣어 줌
 	@Column(name = "createdAt", updatable = false) //업데이트시 시간 변경을 막음 
@@ -49,4 +62,5 @@ public class StudentEntity {
 	@Column(name = "updatedAt")
 	private ZonedDateTime updatedAt;
 	
+
 }
