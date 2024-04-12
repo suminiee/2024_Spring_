@@ -35,5 +35,15 @@ public class Lesson07Quiz01Controller {
 		return companyService.addCompany(name, business, scale, headcount);
 	}
 	
+	@GetMapping("/update")
+	public CompanyEntity update() {
+		return companyService.updateCompany(8, "중소기업", 34);
+	}
+	
+	@GetMapping("/delete")
+	public String delete() {
+		companyService.deleteCompanyById(8);
+		return "삭제완료";
+	}
 	
 }

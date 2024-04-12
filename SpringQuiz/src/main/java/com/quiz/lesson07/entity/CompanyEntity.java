@@ -17,7 +17,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 @ToString
-@Builder
+@Builder(toBuilder = true)
 @NoArgsConstructor //파라미터 없는 생성자 
 @Getter
 @AllArgsConstructor
