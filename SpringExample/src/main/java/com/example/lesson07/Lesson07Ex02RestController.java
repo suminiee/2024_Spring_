@@ -45,7 +45,9 @@ public class Lesson07Ex02RestController {
 //		return studentRepository.findByNameStartingWith("이");
 		
 		//9) id가 2~5 조회 
-		return studentRepository.findByIdBetween(2, 5);
+//		return studentRepository.findByIdBetween(2, 5);
+		
+		return studentRepository.findByDreamJob("유격수");
 	}
 	
 }

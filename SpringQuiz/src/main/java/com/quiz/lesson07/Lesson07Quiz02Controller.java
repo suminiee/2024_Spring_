@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.quiz.lesson07.entity.RecruitEntity;
@@ -17,13 +18,13 @@ public class Lesson07Quiz02Controller {
 	private RecruitRepository recruitRepository;
 	
 	@GetMapping("/1")
-	public List<RecruitEntity> quiz01() {
+	public RecruitEntity quiz01() {
 		return recruitRepository.findById(8);
 	}
 	
 	@GetMapping("/2")
-	public List<RecruitEntity> quiz02() {
-		return recruitRepository.findByIdBetween(1,3);
+	public List<RecruitEntity> quiz02(@RequestParam("companyId") int companyId) {
+		return recruitRepository.findByCompanyId(companyId);
 	}
 	
 	@GetMapping("/3")
@@ -33,7 +34,7 @@ public class Lesson07Quiz02Controller {
 	
 	@GetMapping("/4")
 	public List<RecruitEntity> quiz04() {
-		return recruitRepository.findByTypeOrSalary("정규직", 7300);
+		return recruitRepository.findByTypeOrSalaryGreaterThanEqual("정규직", 7300);
 	}
 	
 	@GetMapping("/5")
@@ -45,4 +46,6 @@ public class Lesson07Quiz02Controller {
 	public List<RecruitEntity> quiz06() {
 		return recruitRepository.findBySalaryBetween(7000, 8500);
 	}
+	
+	
  }
