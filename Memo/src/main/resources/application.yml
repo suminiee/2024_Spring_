@@ -9,9 +9,21 @@ spring:
     static-path-pattern: /static/**
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/20240314?characterEncoding=UTF-8
+    url: jdbc:mysql://localhost:3307/memo_231226?characterEncoding=UTF-8
     username: root
-    password: rkdTnals1!
-    
+    password: root
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate:
+        format_sql: true
 mybatis:
   mapper-locations: mappers/*Mapper.xml
+  
+  
+  
