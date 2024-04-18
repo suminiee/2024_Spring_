@@ -9,9 +9,9 @@ spring:
     static-path-pattern: /static/**
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3307/memo_231226?characterEncoding=UTF-8
+    url: jdbc:mysql://localhost:3306/memo?characterEncoding=UTF-8
     username: root
-    password: root
+    password: rkdTnals1!
   jpa:
     show-sql: true
     hibernate:
