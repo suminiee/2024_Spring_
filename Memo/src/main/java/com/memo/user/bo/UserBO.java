@@ -21,8 +21,26 @@ public class UserBO {
 	// input: 파라미터 4개
 	// output: Integer(user pk)
 	public Integer addUser(String loginId, String password, String name, String email) {
-		return 0;
+		UserEntity user = userRepository.save(UserEntity.builder()
+								.loginId(loginId)
+								.password(password)
+								.name(name)
+								.email(email)
+								.build());
+		
+		return user == null ? null : user.getId();
+	}
+	
+	// input: loginId, password
+	// output: UserEntity or null
+	public UserEntity getUserEntityByLoginIdPassword(String loginId, String password) {
+		return userRepository.findByLoginIdAndPassword(loginId, password);
 	}
 }
+
+
+
+
+
 
 
