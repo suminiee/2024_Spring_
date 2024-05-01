@@ -7,10 +7,17 @@ import com.example.lesson04.domain.User;
 
 @Mapper
 public interface UserMapper {
-	
-	public void insertUser(@Param("name") String name, @Param("yyyymmdd") String yyyymmdd, 
-						@Param("email") String email, @Param("introduce") String introduce);
-	
-	public User selectLatestUser(); 
 
+	public int insertUser(
+			@Param("name") String name, 
+			@Param("yyyymmdd") String yyyymmdd,
+			@Param("email") String email, 
+			@Param("introduce") String introduce);
+	
+	public User selectLatestUser();
+	
+	public boolean isDuplicationByName(String name);
 }
+
+
+
